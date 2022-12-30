@@ -14,7 +14,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with: 
           path: build
-          name: build-files
+          name: buildfiles
   deploy:
     needs: build
     run-on: ubuntu-latest
@@ -22,5 +22,5 @@ jobs:
       - name: Get build project
         uses: actions/download-artifact@v3
         with:
-          name: build-files
+          name: buildfiles
           
