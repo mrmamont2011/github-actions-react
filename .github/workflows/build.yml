@@ -1,20 +1,20 @@
 name: Build & Deploy 222
 on: [push, workflow_dispatch]
 jobs:
-    build:
-      runs-on: ubuntu-latest
-      steps:
-      - name: Get code
-        uses: actions/checkout@v3
-      - name: Install deps
-        run: npm i
-      - name: Build project
-        run: npm run build
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
-        with: 
-          path: build
-          name: buildfiles
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get code
+      uses: actions/checkout@v3
+    - name: Install deps
+      run: npm i
+    - name: Build project
+      run: npm run build
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with: 
+        path: build
+        name: build-files
   deploy:
     needs: build
     run-on: ubuntu-latest
@@ -22,5 +22,5 @@ jobs:
       - name: Get build project
         uses: actions/download-artifact@v3
         with:
-          name: buildfiles
+          name: build-files
           
