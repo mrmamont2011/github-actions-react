@@ -1,4 +1,4 @@
-name: Build 11
+name: Build & Deploy 222
 on: [push, workflow_dispatch]
 jobs:
     build:
@@ -15,5 +15,12 @@ jobs:
         with: 
           path: build
           name: build-files
-
+deploy:
+  needs: build
+  run-on: ubuntu-latest
+  steps:
+    - name: Get build project
+      uses: actions/download-artifact@v3
+      with:
+        name: build-files
         
