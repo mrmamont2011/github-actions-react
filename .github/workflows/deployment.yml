@@ -8,7 +8,7 @@ jobs:
       # run: echo
         uses: actions/checkout@v3
       - name: Install dependecies
-        run: npm ci
+        run: npm i
       - name: Test application
         run: npm run test
   lint:      
@@ -18,7 +18,7 @@ jobs:
       # run: echo
         uses: actions/checkout@v3
       - name: Install dependecies
-        run: npm ci
+        run: npm i
       - name: Lint application
         run: npm run lint
   build:
@@ -28,7 +28,7 @@ jobs:
       # run: echo
         uses: actions/checkout@v3
       - name: Install dependecies
-        run: npm ci
+        run: npm i
       - name: Build application
         run: npm run build
       - name: Deploy
