@@ -17,7 +17,7 @@ jobs:
           name: build-files
   deploy:
     needs: build
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Get build project
         uses: actions/download-artifact@v3
